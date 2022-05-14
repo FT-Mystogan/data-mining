@@ -51,7 +51,8 @@ class C45:
             return True
         else:
             return False
-
+    
+    # Dự đoán nhãn cuối cùng của cây
     def predict(self, node, data_row):
         if not node.is_leaf:
             # get node attribute index
