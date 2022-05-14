@@ -1,0 +1,12 @@
+@RELATION ecoli
+ 
+@ATTRIBUTE mcg numeric 
+@ATTRIBUTE gvh numeric 
+@ATTRIBUTE lip numeric 
+@ATTRIBUTE chg numeric 
+@ATTRIBUTE aac numeric 
+@ATTRIBUTE alm1 numeric 
+@ATTRIBUTE alm2 numeric 
+@ATTRIBUTE class {cp,im,pp,imU,om,omL,imL,imS}
+
+@DATA 
