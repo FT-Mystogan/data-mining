@@ -156,6 +156,7 @@ class C45:
 
         return self.tree
 
+    # Đệ quy sinh node trong cây 
     def recursive_generate_tree(self, data, cur_attributes, parent_maj_class):
 
         all_same_class = self.all_same_class(data)
