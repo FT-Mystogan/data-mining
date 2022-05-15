@@ -168,7 +168,8 @@ class C45:
             # return a node with that class
             return Node(True, all_same_class, None, node_maj_class, None)
         elif all_same_attr is True:
-            return Node(True, parent_maj_class, None, node_maj_class, None)
+            # Giá trị các thuộc tính như nhau -> lá 
+            return Node(True, node_maj_class, None, node_maj_class, None)
         elif len(cur_attributes) == 0:
             # return a node with the majority class
             return Node(True, node_maj_class, None, node_maj_class, None)
