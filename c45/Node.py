@@ -1,4 +1,5 @@
 # gom nhan, nguong(neu co), la nut la, cac nut con
+import json
 class Node:
     _id = 0
 
@@ -11,3 +12,7 @@ class Node:
         self.children = []
         self.maj_class = maj_class  # class xuat hien nhieu nhat trong subset tai node do
         self.subset_data = data
+
+    def toJSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__,
+                          sort_keys=True, indent=4)

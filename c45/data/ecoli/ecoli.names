@@ -1,0 +1,7 @@
+good, medium, low
+softy_skin:   smooth, rough
+origin_lv:    1, 0
+hard_lv:      hard, soft
+shape:        rounded, not_rounded
+smell:        good, nothing, awful
+stalk_type:   dried, normal

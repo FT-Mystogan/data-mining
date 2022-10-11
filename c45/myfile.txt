@@ -1,0 +1,245 @@
+{
+    "_id": 0,
+    "children": [
+        {
+            "_id": 1,
+            "children": [],
+            "is_leaf": true,
+            "label": "low",
+            "maj_class": "low",
+            "subset_data": null,
+            "threshold": null
+        },
+        {
+            "_id": 2,
+            "children": [],
+            "is_leaf": true,
+            "label": "good",
+            "maj_class": "good",
+            "subset_data": null,
+            "threshold": null
+        }
+    ],
+    "is_leaf": false,
+    "label": "softy_skin",
+    "maj_class": "good",
+    "subset_data": [
+        [
+            "smooth",
+            "1",
+            "soft",
+            "rounded",
+            "nothing",
+            "normal",
+            "low"
+        ],
+        [
+            "rough",
+            "0",
+            "hard",
+            "rounded",
+            "nothing",
+            "normal",
+            "good"
+        ],
+        [
+            "smooth",
+            "1",
+            "soft",
+            "rounded",
+            "nothing",
+            "normal",
+            "low"
+        ],
+        [
+            "rough",
+            "0",
+            "hard",
+            "rounded",
+            "nothing",
+            "normal",
+            "good"
+        ],
+        [
+            "smooth",
+            "1",
+            "soft",
+            "rounded",
+            "nothing",
+            "normal",
+            "low"
+        ],
+        [
+            "rough",
+            "0",
+            "hard",
+            "rounded",
+            "nothing",
+            "normal",
+            "good"
+        ],
+        [
+            "smooth",
+            "1",
+            "soft",
+            "rounded",
+            "nothing",
+            "normal",
+            "low"
+        ],
+        [
+            "rough",
+            "0",
+            "hard",
+            "rounded",
+            "nothing",
+            "normal",
+            "good"
+        ],
+        [
+            "smooth",
+            "1",
+            "soft",
+            "rounded",
+            "nothing",
+            "normal",
+            "low"
+        ],
+        [
+            "rough",
+            "0",
+            "hard",
+            "rounded",
+            "nothing",
+            "normal",
+            "good"
+        ],
+        [
+            "smooth",
+            "1",
+            "soft",
+            "rounded",
+            "nothing",
+            "normal",
+            "low"
+        ],
+        [
+            "rough",
+            "0",
+            "hard",
+            "rounded",
+            "nothing",
+            "normal",
+            "good"
+        ],
+        [
+            "smooth",
+            "1",
+            "soft",
+            "rounded",
+            "nothing",
+            "normal",
+            "low"
+        ],
+        [
+            "rough",
+            "0",
+            "hard",
+            "rounded",
+            "nothing",
+            "normal",
+            "good"
+        ],
+        [
+            "smooth",
+            "1",
+            "soft",
+            "rounded",
+            "nothing",
+            "normal",
+            "low"
+        ],
+        [
+            "rough",
+            "0",
+            "hard",
+            "rounded",
+            "nothing",
+            "normal",
+            "good"
+        ],
+        [
+            "smooth",
+            "1",
+            "soft",
+            "rounded",
+            "nothing",
+            "normal",
+            "low"
+        ],
+        [
+            "rough",
+            "0",
+            "hard",
+            "rounded",
+            "nothing",
+            "normal",
+            "good"
+        ],
+        [
+            "smooth",
+            "1",
+            "soft",
+            "rounded",
+            "nothing",
+            "normal",
+            "low"
+        ],
+        [
+            "rough",
+            "0",
+            "hard",
+            "rounded",
+            "nothing",
+            "normal",
+            "good"
+        ],
+        [
+            "smooth",
+            "1",
+            "soft",
+            "rounded",
+            "nothing",
+            "normal",
+            "low"
+        ],
+        [
+            "rough",
+            "0",
+            "hard",
+            "rounded",
+            "nothing",
+            "normal",
+            "good"
+        ],
+        [
+            "smooth",
+            "1",
+            "soft",
+            "rounded",
+            "nothing",
+            "normal",
+            "low"
+        ],
+        [
+            "rough",
+            "0",
+            "hard",
+            "rounded",
+            "nothing",
+            "normal",
+            "good"
+        ]
+    ],
+    "threshold": null
+}

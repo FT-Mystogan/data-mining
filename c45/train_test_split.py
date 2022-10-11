@@ -73,5 +73,6 @@ def write_arff_file(path, dataset_name, attrs, attr_values, classes, data):
 
 # ratio: tỉ lệ chia data
 
-# train_test_split('car', 'data/car/1.0/car.data', 'data/car/1.0/car.c45-names', 'data/car', 0.8)
-train_test_split('ecoli', 'data/ecoli/1.0/ecoli.data', 'data/ecoli/1.0/ecoli.names', 'data/ecoli', 1.0)
+train_test_split('ecoli', 'data/ecoli/ecoli.data', 'data/ecoli/ecoli.names', 'data/ecoli', 0.8)
+# train_test_split('breast-cancer', 'data/breast-cancer/breast-cancer-new.data', 'data/breast-cancer/breast-cancer.names',
+#                  'data/breast-cancer', 0.6)

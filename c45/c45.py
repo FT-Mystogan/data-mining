@@ -1,6 +1,8 @@
 from Node import Node
 from cal_gain_ratio import gain_ratio
 from read_data import get_data, get_names
+from NodeTest import NodeTest
+import json
 
 
 class C45:
@@ -10,6 +12,7 @@ class C45:
         self.training_path = training_path
         self.testing_path = testing_path
         self.names_path = names_path
+        self.f = open('myfile.txt', "a")
 
         self.classes = []  # Lớp phân loại
         self.attr_values = {}  # Giá trị các thuộc tính
@@ -25,9 +28,10 @@ class C45:
         # Dữ liệu
         self.training_data = []
         self.testing_data = []
-        self.min_number_of_instances = 2 
+        self.min_number_of_instances = 2
 
-    # đọc dữ liệu từ file ra 2 tập train và test
+        # đọc dữ liệu từ file ra 2 tập train và test
+
     def get_data(self):
         (self.attributes, self.attr_values, self.classes) = get_names(self.names_path)
         self.training_data = self.pre_process(get_data(self.training_path))
@@ -51,7 +55,7 @@ class C45:
             return True
         else:
             return False
-    
+
     # Dự đoán nhãn cuối cùng của cây
     def predict(self, node, data_row):
         if not node.is_leaf:
@@ -108,12 +112,48 @@ class C45:
 
         return error
 
+    def test_json(self):
+        x = open("myfile.txt", "r")
+        data = json.load(x)
+        t = NodeTest(**data)
+        self.print_tree(t)
+
     def print_tree(self, tree):
         self.count_leaf = 0
         self.count_node = 0
         self.print_node(tree)
         print('number of nodes: ' + str(self.count_node))
         print('number of leaves: ' + str(self.count_leaf))
+
+    def print_json(self, node):
+        self.f.write(node.toJSON())
+
+    def print_file(self, node, indent=""):
+        if not node.is_leaf:
+            if node.threshold is None:
+                # roi rac
+                for index, child in enumerate(node.children):
+                    if child.is_leaf:
+                        self.f.write(indent + node.label + " = " + self.attr_values[node.label][
+                            index] + " : " + child.label + "\n")
+                    else:
+                        self.f.write(indent + node.label + " = " + self.attr_values[node.label][index] + "\n")
+                        self.print_file(child, indent + "|   ")
+            else:
+                # lien tuc
+                left_child = node.children[0]
+                right_child = node.children[1]
+                if left_child.is_leaf:
+                    self.f.write(indent + node.label + " <= " + str(node.threshold) + " : " + left_child.label + "\n")
+                else:
+                    self.f.write(indent + node.label + " <= " + str(node.threshold) + "\n")
+                    self.print_file(left_child, indent + "|    ")
+
+                if right_child.is_leaf:
+                    self.f.write(indent + node.label + " > " + str(node.threshold) + " : " + right_child.label + "\n")
+                else:
+                    self.f.write(indent + node.label + " > " + str(node.threshold) + "\n")
+                    self.print_file(right_child, indent + "|   ")
 
     def print_node(self, node, indent=""):
         self.count_node += 1
@@ -152,7 +192,7 @@ class C45:
 
     def generate_tree(self):
         self.tree = self.recursive_generate_tree(self.training_data, self.attributes,
-                                               self.get_major_class(self.training_data))
+                                                 self.get_major_class(self.training_data))
 
         return self.tree
 
@@ -187,7 +227,7 @@ class C45:
                 count_subset = 0
                 for subset in splitted:
                     if len(subset) >= self.min_number_of_instances:
-                         count_subset += 1
+                        count_subset += 1
                 if count_subset < 2:
                     return Node(True, parent_maj_class, None, node_maj_class, None)
 
@@ -296,7 +336,7 @@ class C45:
     # Tính giá trị lỗi sau khi tỉa cây(trước khi thêm nhánh đang xét)
     def get_pessimistic_err_before(self, tree, data):
         error = (self.validate(tree, data)) / len(data)
-        
+
         return error
 
     # Tính giá trị lỗi trước khi tỉa cây(sau khi thêm nhánh đang xét)
